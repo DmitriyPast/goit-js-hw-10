@@ -8,7 +8,7 @@ form.addEventListener('submit', generatePromise);
 
 // const fields = form.querySelectorAll('input');
 const delay = form.querySelector('input[name="delay"]');
-const state = form.querySelector('input[value="fulfilled"]');
+const state = form.querySelectorAll('input[name="state"]');
 
 function generatePromise(evt) {
   evt.preventDefault();
@@ -18,10 +18,12 @@ function generatePromise(evt) {
   const promise = new Promise((resolve, reject) =>
     setTimeout(
       () =>
-        state.checked
+        state[0].checked
           ? resolve(`✅ Fulfilled promise in ${delay.value}ms`)
-          : reject(`❌ Rejected promise in ${delay.value}ms`),
-      delay.value
+          : {} || state[1].checked
+          ? reject(`❌ Rejected promise in ${delay.value}ms`)
+          : {},
+      Number(delay.value)
     )
   );
 
