@@ -15,31 +15,30 @@ function generatePromise(evt) {
   // const [delay, fulfil, reject] = fields;
   // console.log(delay, fulfil, reject);
 
-  const promise = new Promise((resolve, reject) =>
-    setTimeout(
-      () =>
-        state[0].checked
-          ? resolve(`✅ Fulfilled promise in ${delay.value}ms`)
-          : {} || state[1].checked
-          ? reject(`❌ Rejected promise in ${delay.value}ms`)
-          : {},
-      Number(delay.value)
-    )
-  );
+  const { delay, state } = evt.target.elements;
+  const delayValue = Number(delay.value);
+  const stateValue = state.value;
 
-  promise
-    .then(result => {
-      iziToast.success({
-        message: result,
-        position: 'topRight',
-      });
+  setTimeout(() => {
+    new Promise((resolve, reject) => {
+      if (stateValue === 'fulfilled') {
+        resolve('Fulfilled');
+      } else {
+        reject('Rejected');
+      }
     })
-    .catch(err => {
-      iziToast.error({
-        message: err,
-        position: 'topRight',
+      .then(result => {
+        iziToast.success({
+          message: result,
+          position: 'topRight',
+        });
+      })
+      .catch(err => {
+        iziToast.error({
+          message: err,
+          position: 'topRight',
+        });
       });
-    });
-
+  }, delayValue);
   form.reset();
 }
