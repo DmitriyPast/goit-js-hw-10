@@ -22,9 +22,9 @@ function generatePromise(evt) {
   setTimeout(() => {
     new Promise((resolve, reject) => {
       if (stateValue === 'fulfilled') {
-        resolve('Fulfilled');
+        resolve(`✅ Fulfilled promise in ${delayValue}ms`);
       } else {
-        reject('Rejected');
+        reject(`❌ Rejected promise in ${delayValue}ms`);
       }
     })
       .then(result => {
