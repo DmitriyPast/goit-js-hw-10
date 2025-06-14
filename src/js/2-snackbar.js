@@ -19,22 +19,28 @@ function generatePromise(evt) {
   const delayValue = Number(delay.value);
   const stateValue = state.value;
 
+  // iziToast.settings({
+  //   e,
+  // });
+
   setTimeout(() => {
     new Promise((resolve, reject) => {
       if (stateValue === 'fulfilled') {
-        resolve(`✅ Fulfilled promise in ${delayValue}ms`);
+        resolve(`Fulfilled promise in ${delayValue}ms`);
       } else {
-        reject(`❌ Rejected promise in ${delayValue}ms`);
+        reject(`Rejected promise in ${delayValue}ms`);
       }
     })
       .then(result => {
         iziToast.success({
+          title: 'OK',
           message: result,
           position: 'topRight',
         });
       })
       .catch(err => {
         iziToast.error({
+          title: 'Error',
           message: err,
           position: 'topRight',
         });

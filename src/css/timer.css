@@ -4,19 +4,136 @@ body {
 }
 
 main {
+  /* display: flex; */
+  flex-wrap: wrap;
+  /* max-width: 355px; */
+  /* margin: 36px 0px 0px 156px; */
+}
+main > .container {
   display: flex;
   flex-wrap: wrap;
-  max-width: 355px;
-  margin: 36px 0px 0px 156px;
-}
-/* .container {
   min-width: 320px;
   max-width: 375px;
-  margin: 0;
+  margin: 0 auto;
+  margin: 36px 0px 0px 156px;
   padding: 0;
-} */
+}
 
 /* timer */
+
+/* #region task-3 (goit-js-hw-07) */
+
+* {
+  box-sizing: border-box;
+
+  /* margin: 0; */
+  /* padding: 0; */
+  /* border: 0; */
+}
+
+input {
+  /* display: block; */
+  padding: 8px 16px;
+  border: 1px solid #808080;
+  border-radius: 4px;
+  /* width: 100%; */
+  /* width: 360px; */
+  height: 40px;
+
+  font-weight: 400;
+  font-size: 16px;
+
+  /* line-height: 24px; */
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+  /* text-emphasis-color: #fff; */
+}
+
+input:hover {
+  outline: none;
+  border: 1px solid #000;
+}
+
+input:active,
+input:focus {
+  outline: none;
+  /* border: 1px solid #808080; */
+  border: 1px solid #4e75ff;
+  /* color: #2e2f42; */
+  color: #000;
+}
+
+input:disabled,
+input:disabled:hover {
+  background: #fafafa;
+  border: 1px solid #808080;
+  color: #808080;
+  cursor: not-allowed;
+}
+/* #endregion */
+
+/* #region task-4 (goit-js-hw-07) */
+/* form.login-form {
+} */
+
+button {
+  background: #4e75ff;
+  font-family: 'Montserrat', sans-serif;
+  border: 0;
+  border-radius: 8px;
+  padding: 8px 16px;
+  height: 40px;
+
+  font-weight: 500;
+  font-size: 16px;
+
+  line-height: 1.5; /* line-height: 24px; */
+  letter-spacing: 0.04em;
+  color: #fff;
+}
+
+button:hover {
+  background: #6c8cff;
+}
+
+/* button.active,
+button:active {
+  background-color: rgb(127, 76, 167);
+  color: white;
+} */
+button:disabled,
+button:disabled:hover {
+  background-color: #cfcfcf;
+  color: #989898;
+  cursor: not-allowed;
+}
+/* #endregion */
+
+/*  */
+textarea {
+  display: block;
+  padding: 8px 16px;
+  border: 1px solid #808080;
+  border-radius: 4px;
+  /* width: 100%; */
+  width: 360px;
+  height: 80px;
+
+  font-weight: 400;
+  font-size: 16px;
+
+  /* line-height: 24px; */
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+  text-emphasis-color: #fff;
+}
+
+textarea:hover {
+  outline: none;
+  border: 1px solid #000;
+}
 
 input#datetime-picker {
   margin-right: 8px;
